@@ -1,11 +1,5 @@
-import Navigation from './Navigation.jsx'
-import Profile from '../Images/profilepic.jpeg'
-
-function Welcome ()
-{
-  return (
-    <div className="min-h-screen flex flex-col">
-        <Navigation />
+function WelcomeHome () {
+    return (
         <main className="relative flex items-center justify-center h-[calc(100vh-64px)] overflow-hidden">
 
         {/* Abstract Background Glow */}
@@ -16,20 +10,21 @@ function Welcome ()
                 HI, IM RYAN <span className="text-blue-600">.</span>
             </h1>
             <p className="mt-4 text-2xl font-mono text-gray-500">
-                &gt; Software Engineer // Virginia Tech
+                &gt; Software Engineer // Mclean VA // Virginia Tech
             </p>
             <div className="mt-10 flex gap-4 justify-center">
             <button className="px-8 py-4 bg-black  text-white  rounded-full font-bold hover:scale-105 transition">
                 View Projects
             </button>
             <button className="px-8 py-4 border border-black  rounded-full font-bold hover:bg-black hover:text-white  transition">
+                <a href = "/Official_Resume.pdf" target = "_blank" rel = "noopener noreferrer">
                 Read Resume
+                </a>
             </button>
             </div>
         </div>
         </main>
-    </div>
-  );
+    )
 }
 
-export default Welcome;
+export default WelcomeHome;
