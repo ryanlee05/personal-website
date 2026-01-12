@@ -1,38 +1,35 @@
-import '../app.css'
+import Navigation from './Navigation.jsx'
+import Profile from '../Images/profilepic.jpeg'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import {faLinkedin} from '@fortawesome/free-brands-svg-icons'
+function Welcome ()
+{
+  return (
+    <div className="min-h-screen flex flex-col">
+        <Navigation />
+        <main className="relative flex items-center justify-center h-[calc(100vh-64px)] overflow-hidden">
 
-import profilePic from '../Images/profilepic.jpeg'
+        {/* Abstract Background Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-blue-500/20 rounded-full blur-[120px] pointer-events-none"></div>
 
-function Welcome() {
-
-
-    return (
-        <>  
-        <div className = "container">
-            <div className = "welcomeBox">
-                <div className = "text fade-in-up">
-                    <h1>Hey, I'm Ryan!</h1>
-                    <h3>I'm a Junior at <span className = "maroon">Virginia</span> <span className = "orange">Tech</span> studying Computer Science.</h3>
-                    <h3>I'm passionate about building creative and scalable solutions through full-stack development, software engineering, and product management.</h3>
-                    <div className = "button fade-in-up-later">
-                        <button>Learn more</button>
-                    </div>
-                </div>
-                <div className = "visuals">
-                    <img src = {profilePic} alt = "Profile Picture"/>
-                    <div className = "links">
-                        <a href = 'https://github.com/ryanlee05'><FontAwesomeIcon className = "icon" icon={faGithub} /></a>
-                        <a href = 'https://www.linkedin.com/in/leeryan05/'><FontAwesomeIcon className = "icon" icon={faLinkedin} /></a>
-                    </div>
-                </div>
+        <div className="text-center z-10">
+            <h1 className="text-8xl font-black tracking-tighter text-black">
+                HI, IM RYAN <span className="text-blue-600">.</span>
+            </h1>
+            <p className="mt-4 text-2xl font-mono text-gray-500">
+                &gt; Software Engineer // Virginia Tech
+            </p>
+            <div className="mt-10 flex gap-4 justify-center">
+            <button className="px-8 py-4 bg-black  text-white  rounded-full font-bold hover:scale-105 transition">
+                View Projects
+            </button>
+            <button className="px-8 py-4 border border-black  rounded-full font-bold hover:bg-black hover:text-white  transition">
+                Read Resume
+            </button>
             </div>
         </div>
-        </>
-    );
-
+        </main>
+    </div>
+  );
 }
 
 export default Welcome;

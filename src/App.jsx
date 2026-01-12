@@ -1,19 +1,17 @@
-import { useState } from 'react'
 import './App.css'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
-
-
-import Welcome from "./Components/Welcome.jsx"
-import Navigation from "./Components/Navigation.jsx"
-import About from "./Components/About.jsx"
+import Welcome from './Components/Welcome.jsx'
 
 function App() {
 
   return (
     <>
-      <Navigation/>
-      <Welcome/>
-      <About/>
+      <BrowserRouter>
+        <Routes>
+          <Route path = "/" element = {<Welcome/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
