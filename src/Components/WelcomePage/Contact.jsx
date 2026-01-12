@@ -1,4 +1,24 @@
+import {useState} from 'react'
+
 function Contact() {
+
+  const [formSubmit, setFormSubmit] = useState("idle"); //Track from submission state
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmit("submitting");
+
+    const formData = new FormData(e.target);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => setFormSubmit("success"))
+      .catch(() => setFormSubmit("error"));
+  }
+
   return (
     <section id="contact" className="w-full min-h-[80vh] bg-black text-white py-20 px-10 transition-colors">
        
@@ -9,28 +29,37 @@ function Contact() {
           <h1 className="text-6xl font-black tracking-tighter mb-4">
             Get In Touch <span className="text-blue-600">!</span>
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">
-            Have a project in mind or just want to say hi? Drop a message!
-          </p>
 
-          <form 
-          netlify
-          name = "contact"
-          method = "POST"
-          data-netlify = "true"
-          onSubmit = "Submit"
-          className="space-y-4 ">
-            {/* This hidden input is REQUIRED for React/Vite sites on Netlify */}
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input type="text" name = "Name" placeholder="Name" className="w-full p-4 bg-gray-100 dark:bg-zinc-900 rounded-xl outline-none focus:ring-2 focus:ring-blue-600 transition" />
-              <input type="email" name = "Email" placeholder="Email" className="w-full p-4 bg-gray-100 dark:bg-zinc-900 rounded-xl outline-none focus:ring-2 focus:ring-blue-600 transition" />
-            </div>
-            <textarea placeholder="Tell me about your project :D" rows="5" className="w-full p-4 bg-gray-100 dark:bg-zinc-900 rounded-xl outline-none focus:ring-2 focus:ring-blue-600 transition"></textarea>
-            <button className="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl hover:opacity-90 transition transform active:scale-95">
-              Send Message
-            </button>
-          </form>
+          {formSubmit === "success" ? (
+            <>
+              <h1>Thank you for your submission!</h1>
+              <p>I will get back to you as soon as possible.</p>
+            </>
+          ) : (
+            <>
+              <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">
+                Have a project in mind or just want to say hi? Drop a message!
+              </p>
+              <form 
+                netlify
+                name = "contact"
+                method = "POST"
+                data-netlify = "true"
+                onSubmit = {handleSubmit}
+                className="space-y-4 ">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <input type="text" name = "Name" placeholder="Name" className="w-full p-4 bg-gray-100 dark:bg-zinc-900 rounded-xl outline-none focus:ring-2 focus:ring-blue-600 transition" />
+                    <input type="email" name = "Email" placeholder="Email" className="w-full p-4 bg-gray-100 dark:bg-zinc-900 rounded-xl outline-none focus:ring-2 focus:ring-blue-600 transition" />
+                  </div>
+                  <textarea name = "message" placeholder="Tell me about your project :D" rows="5" className="w-full p-4 bg-gray-100 dark:bg-zinc-900 rounded-xl outline-none focus:ring-2 focus:ring-blue-600 transition"></textarea>
+                  <button className="w-full py-4 bg-black dark:bg-white text-white dark:text-black font-bold rounded-xl hover:opacity-90 transition transform active:scale-95">
+                    Send Message
+                  </button>
+              </form>
+            </>
+          )}
+
         </div>
 
         {/* Right Column: Socials & Info */}
