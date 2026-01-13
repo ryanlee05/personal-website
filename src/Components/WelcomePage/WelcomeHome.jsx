@@ -1,4 +1,23 @@
 function WelcomeHome () {
+
+    const handleScroll = (id) => {
+    // 1. Find the element by ID
+    const element = document.getElementById(id.toLowerCase());
+    
+    if (element) {
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition;
+
+      // 3. Perform the scroll
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
     return (
         <main className="relative flex items-center justify-center h-[calc(100vh-64px)] overflow-hidden">
 
@@ -7,21 +26,21 @@ function WelcomeHome () {
 
         <div className="text-center z-10">
             <h1 className="text-8xl font-black tracking-tighter text-black">
-                HI, IM RYAN <span className="text-blue-600">.</span>
+                HI, IM <span className="whitespace-nowrap">RYAN <span className = "text-blue-600">.</span></span>
             </h1>
-            <p className="mt-4 text-2xl font-mono text-gray-500">
+            <p className="hidden md:block mt-4 text-2xl font-mono text-gray-500">
+                &gt; ~/Software_Engineer/Mclean_VA/Virginia_Tech
+            </p>
+            <p className = "block md:hidden mt-4 text-2xl font-mono text-gray-500">
                 &gt; Software Engineer // Mclean VA // Virginia Tech
             </p>
             <div className="mt-10 flex gap-4 justify-center">
-            <button className="px-8 py-4 bg-black  text-white  rounded-full font-bold hover:scale-105 transition">
-                <a href = "#about">
+            <button onClick = {handleScroll.bind(null, 'about')}className="px-8 py-4 bg-black  text-white  rounded-full font-bold hover:scale-105 transition">
                 Learn More
-                </a>
+
             </button>
-            <button className="px-8 py-4 border border-black  bg-blue-600 rounded-full font-bold hover:bg-blue-700 text-white transition">
-                <a href = "#contact">
+            <button onClick = {handleScroll.bind(null, 'contact')}className="px-8 py-4 border border-black  bg-blue-600 rounded-full font-bold hover:bg-blue-700 text-white transition">
                 Contact Me
-                </a>
             </button>
             <button className="hidden md:block px-8 py-4 border border-black  rounded-full font-bold hover:bg-black hover:text-white  transition">
                 <a href = "/Official_Resume.pdf" target = "_blank" rel = "noopener noreferrer">

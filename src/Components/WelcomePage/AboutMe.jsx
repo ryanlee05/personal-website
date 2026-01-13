@@ -9,14 +9,13 @@ function AboutMe() {
 
     return (
         <section id="about" className="min-h-screen bg-black  text-white py-20 px-6">
-        <div className="ml-10 mx-auto">
+        <div className="md:ml-10 mx-auto">
             
             {/* Header Section */}
             <div className="flex flex-col items-start mb-16">
             <h1 className="text-7xl md:text-8xl font-black tracking-tighter">
-                Who I am <span className="text-blue-600">.</span>
+                <span className = "inline-block border-b-4 border-blue-600 pb-1">Who </span> I <span className="whitespace-nowrap">am <span className = "text-blue-600">.</span></span>
             </h1>
-            <div className="h-2 w-24 bg-blue-600 mt-4"></div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -36,8 +35,13 @@ function AboutMe() {
                 </p>
 
                 <p className = "text-xl text-gray-400 leading-relax">
-                    While away from my laptop, you can find me at a football game (GO HOKIES), 
-                    perfecting my golf swing, cooking up a steak, or planning my next travel adventure!
+                    While away from my laptop, you can find me at a football game, 
+                    perfecting my golf swing, researching a stock, cooking up a steak, or planning my next travel adventure!
+                </p>
+
+                <p className = "text-xl text-gray-400 leading-relaxed">
+                     I am actively seeking <span className = "text-blue-600">internship opportunities</span> in software 
+                    engineering to apply my knowledge and skills in a professional setting.
                 </p>
 
             </div>
@@ -47,8 +51,7 @@ function AboutMe() {
 
                 {/* Interests Card */}
                 <div className="p-8 border-2 border-zinc-800 rounded-3xl">
-                <h3 className="font-bold text-xl mb-4">My interests in pictures</h3>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-2">
                     {interests.map((item, index) => (
                                     <img 
                                         key={index} // Always add a key when mapping in React
