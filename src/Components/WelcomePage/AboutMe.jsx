@@ -51,13 +51,13 @@ function AboutMe() {
 
                 {/* Interests Card */}
                 <div className="p-8 border-2 border-zinc-800 rounded-3xl">
-                <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-2">
                     {interests.map((item, index) => (
                                     <img 
                                         key={index} // Always add a key when mapping in React
                                         src={item.src} // Matches the key in your array
                                         alt={item.alt} 
-                                        className="aspect-square h-full object-cover rounded-lg shadow-sm transition-transform" 
+                                        className="aspect-square w-full object-cover rounded-lg shadow-sm transition-transform" 
                                     />
                                 ))}
                 </div>
