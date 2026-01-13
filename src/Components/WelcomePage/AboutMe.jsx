@@ -1,5 +1,5 @@
-import Football from '../../Images/Interests/football.jpg'
-import Golf from '../../Images/Interests/golf.png'
+import Football from '../../Images/Interests/football.JPG'
+import Golf from '../../Images/Interests/golf.PNG'
 import Steak from '../../Images/Interests/steak.jpeg'
 import Travel from '../../Images/Interests/travelling.jpeg'
 
