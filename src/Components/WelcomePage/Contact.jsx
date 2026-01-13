@@ -41,14 +41,13 @@ function Contact() {
                 Have a project in mind or just want to say hi? Drop a message!
               </p>
               <form 
-                netlify
                 name = "contact"
                 method = "POST"
                 data-netlify = "true"
                 onSubmit = {handleSubmit}
                 className="space-y-4 ">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <input type="hidden" name="contact" value="contact" />
+                    <input type="hidden" name="form-name" value="contact" />
                     <input type="text" name = "Name" placeholder="Name" className="w-full p-4 bg-gray-100 dark:bg-zinc-900 rounded-xl outline-none focus:ring-2 focus:ring-blue-600 transition" />
                     <input type="email" name = "Email" placeholder="Email" className="w-full p-4 bg-gray-100 dark:bg-zinc-900 rounded-xl outline-none focus:ring-2 focus:ring-blue-600 transition" />
                   </div>
@@ -57,6 +56,12 @@ function Contact() {
                     Send Message
                   </button>
               </form>
+              <form 
+                name = "contact" netlify netlify-honeypot = "bot-field" hidden>
+                  <input type = "text" name = "Name"/>
+                  <input type = "email" name = "Email"/>
+                  <textarea name = "message"></textarea>
+                </form>
             </>
           )}
 
