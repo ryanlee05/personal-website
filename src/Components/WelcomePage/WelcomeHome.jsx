@@ -14,9 +14,16 @@ function WelcomeHome () {
             </p>
             <div className="mt-10 flex gap-4 justify-center">
             <button className="px-8 py-4 bg-black  text-white  rounded-full font-bold hover:scale-105 transition">
-                View Projects
+                <a href = "#about">
+                Learn More
+                </a>
             </button>
-            <button className="px-8 py-4 border border-black  rounded-full font-bold hover:bg-black hover:text-white  transition">
+            <button className="px-8 py-4 border border-black  bg-blue-600 rounded-full font-bold hover:bg-blue-700 text-white transition">
+                <a href = "#contact">
+                Contact Me
+                </a>
+            </button>
+            <button className="hidden md:block px-8 py-4 border border-black  rounded-full font-bold hover:bg-black hover:text-white  transition">
                 <a href = "/Official_Resume.pdf" target = "_blank" rel = "noopener noreferrer">
                 Read Resume
                 </a>

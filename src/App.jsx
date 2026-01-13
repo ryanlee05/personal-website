@@ -1,5 +1,5 @@
 import './App.css'
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom'
 
 import Welcome from './Components/WelcomePage/Welcome.jsx'
 
@@ -9,7 +9,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path = "/" element = {<Welcome/>}/>
+          <Route path = "/" element = {<Navigate to="/about" replace />} />
+          <Route path = "/about" element = {<Welcome/>} />
         </Routes>
       </BrowserRouter>
     </>

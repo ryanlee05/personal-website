@@ -31,10 +31,10 @@ function Contact() {
           </h1>
 
           {formSubmit === "success" ? (
-            <>
-              <h1>Thank you for your submission!</h1>
-              <p>I will get back to you as soon as possible.</p>
-            </>
+            <div className = "mt-10 flex flex-col justify-evenly">
+              <p className = "font-bold text-3xl">Thank you for your submission.</p>
+              <p className = "font-bold text-3xl">I will get back to you as soon as possible.</p>
+            </div>
           ) : (
             <>
               <p className="text-gray-600 dark:text-gray-400 mb-8 text-lg">
