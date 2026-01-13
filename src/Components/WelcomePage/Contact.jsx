@@ -92,6 +92,9 @@ function Contact() {
                 <p className="text-xs text-gray-500 uppercase font-bold">Personal Email</p>
                 <p className="font-medium">ryanlee.se@outlook.com</p>
               </div>
+            </div>
+            <div className="flex items-center space-x-4">
+              <span className="p-3 bg-blue-600/10 text-blue-600 rounded-lg">📧</span>
               <div>
                 <p className="text-xs text-gray-500 uppercase font-bold">School Email</p>
                 <p className="font-medium">ryanlee05@vt.edu</p>

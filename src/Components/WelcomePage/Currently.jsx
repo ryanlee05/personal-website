@@ -14,7 +14,7 @@ function Currently() {
                 {/* Header Section */}
                 <div className="flex flex-col items-start mb-20">
                     <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-white drop-shadow-2xl">
-                        Currently <span className="text-blue-600">.</span>
+                        Currently <span className="text-sky-400">.</span>
                         <p className = "font-mono text-gray-500"></p>
                     </h2>
                 </div>
@@ -61,12 +61,12 @@ function Currently() {
                         <Code className="text-blue-400 mb-6" size={32} />
                         <h3 className="text-zinc-400 font-mono text-sm uppercase mb-2">Working On</h3>
                         <p className="text-3xl font-bold text-white leading-tight">
-                            Personal Portfolio with <span className="text-blue-400 underline decoration-2 underline-offset-8">Cosmic UI</span> transitions
+                            Learning Java <span className = "text-sky-400">Spring Boot</span>
                         </p>
                         <div className="mt-6 flex gap-3">
-                            <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-zinc-300 border border-white/10">React</span>
-                            <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-zinc-300 border border-white/10">Tailwind</span>
-                            <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-zinc-300 border border-white/10">Framer Motion</span>
+                            <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-zinc-300 border border-white/10">Java</span>
+                            <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-zinc-300 border border-white/10">Spring</span>
+                            <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-zinc-300 border border-white/10">Backend</span>
                         </div>
                     </div>
 
